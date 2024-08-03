@@ -14,7 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function addTask() {
       // Retrieve then trim the value from the task input field
       const taskText = taskInput.value.trim();
-  
+      function addTask(taskText, save = true) {
+        // Task creation logic remains the same
+    
+        if (save) {
+            const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+            storedTasks.push(taskText);
+            localStorage.setItem('tasks', JSON.stringify(storedTasks));
+        }
+    }
+    
       //creating an li element if its not free 
       if (!taskText === "") {
         const li = document.createElement('li');
