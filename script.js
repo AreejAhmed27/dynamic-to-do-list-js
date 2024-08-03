@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
       // Retrieve then trim the value from the task input field
       const taskText = taskInput.value.trim();
   
-      // Confirm if taskText is empty or not
+      // Confirm if taskText is empty or not 
       if (taskText === "") {
-        alert("Please enter a task");
-        return;
+        alert("Please enter a task")
       }
-  
-      // Creating a new li element
-      const li = document.createElement('li');
-      li.textContent = taskText;
-  
+      //creating an li element if its not free
+      else{
+        const li = document.createElement('li');
+        li.textContent = taskText;
+      }
+
       // Creating a new button element for removing the task
       const removeButton = document.createElement('button');
       removeButton.textContent = "Remove";
