@@ -1,7 +1,7 @@
 // Setup EventListener for Page Load
 document.addEventListener('DOMContentLoaded', function() {
     // Selecting DOM Elements by their ID's
-    const addButton = document.getElementById('add-button');
+    const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
   
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       removeButton.className = 'remove-btn';
   
       // Connecting an onclick event to the remove button
-      removeButton.onclick = () => {
+      removeButton.onclick = function() {
         taskList.removeChild(li);
       };
   
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Connecting the EventListener
     addButton.addEventListener('click', addTask);
-    taskInput.addEventListener('keypress', (event) => {
+    taskInput.addEventListener('keypress', function(event) {
       if (event.key === 'Enter') {
         addTask();
       }
